@@ -22,5 +22,9 @@ public class User {
     private String patronymic;
     private Date birthDate;
     private String email;
+    private String password;
     private String phoneNumber;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id")
+    private Role role;
 }

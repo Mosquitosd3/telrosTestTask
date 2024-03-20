@@ -2,7 +2,7 @@ package com.testTask.telros.service;
 
 import com.testTask.telros.model.User;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
+import com.testTask.telros.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +43,10 @@ public class UserRepositoryService {
         List<User> rsl = new ArrayList<>();
         repository.findAll().forEach(rsl::add);
         return rsl;
+    }
+
+    public Optional<User> userFindByEmail(String email) {
+        return repository.findByEmail(email);
     }
 
     /**
